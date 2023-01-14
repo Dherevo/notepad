@@ -393,7 +393,7 @@ body {
 }
 
 body {
-    background: gray;
+    background: #f3f4f6;
 }
 
 #next:before, #last:before, #last:after, #first:after, #first:before, #previous:before {
@@ -411,18 +411,19 @@ body {
 min-height: 30px;
 }
 
-#last:after {
-    left: 0;
+#first:after {
+    right: 10px;
 }
 
+#last:after {
+    right: 10px;
+}
 
 #first, #previous, #last, #next {
 
 }
 
-#first:after {
-    right: 10px;
-}
+
 
 #next:before, #last:before, #last:after {
     transform: rotate(135deg);
@@ -566,8 +567,6 @@ font-size: 10px;
 
 #notepad {
     display: grid;
-    grid-template-columns: repeat(3, 32%);
-    column-gap: 2%;
     max-width: 1000px;
     margin: 30px 0;
     width: 100%;
@@ -611,10 +610,37 @@ font-size: 10px;
     color: #c7c7c7
 }
 
-#content {
-    min-width: 1048px;
+
+@media screen and (min-width: 1024px) {
+    #content {
+        display: flex;
+        min-width: 1024px;
+    }
+
+    #notepad {
+        grid-template-columns: repeat(3, 32%);
+        column-gap: 2%;
+    }
 }
 
+@media screen and (max-width: 1024px) and (min-width: 500px){
+    #notepad {
+        grid-template-columns: repeat(2, 48%);
+        column-gap: 2%;
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    #pagination button:not([id]) {
+        display: none;
+    }
+
+    #pagination button[id] {
+        padding: 0 30px;
+        margin: 0;
+    }
+}
 
 header {
     background: #6b84fd;
