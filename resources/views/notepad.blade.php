@@ -115,7 +115,12 @@
         if (lastNote == 0) {
             currentNote = 0;
             firstNote = 0;
-            output = "<div class='emptyNotes'>Currently there are no notes yet</div>";
+
+            let emptyNotes = document.createElement("div");
+            emptyNotes.classList.add('emptyNotes');
+            emptyNotes.innerHTML = "Currently there are no notes yet";
+            notepad.appendChild(emptyNotes);
+
         }
 
         while (currentNote < lastNote) {
