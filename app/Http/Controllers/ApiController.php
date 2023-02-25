@@ -15,7 +15,7 @@ class ApiController extends Controller {
 
         if (!$notes) {
             return response()->json([
-                'message' => 'Currently there are no notes yet'
+                'message' => 'Currently there are no notes yet.'
             ]);
         }
 
